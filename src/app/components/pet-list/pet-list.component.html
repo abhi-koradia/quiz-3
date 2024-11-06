@@ -1,0 +1,10 @@
+<app-header [title]="'Pets List'" [total]="getTotalPets()"></app-header>
+
+<p>Pet List:</p>
+
+<div *appFor="let pet of pets; let i = index" class="pet-item" [ngStyle]="{ 'color': getColorStyle(pet.color) }">
+  <h3>Name: {{ pet.name }}</h3>
+  <p>Type: {{ pet.type }}</p>
+  <p>Color: {{ pet.color }}</p>
+  <button (click)="deletePet(pet.id)">Delete</button>
+</div>
